@@ -8,28 +8,32 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+
 @Entity
-@Table (name = "users")
+@Table(name = "users")
 public class User {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
-	@Column (name = "username")
-	private String username;
-	
-	@Column ( name="password")
-	private String password;
 
-	
-	public Role getUserRole() {
-		return userRole;
-	}
+	@Column(name = "username")
+	private String username;
+
+	@Column(name = "password")
+	private String password;
 
 	@ManyToOne
 	@JoinColumn(name = "role_id")
 	private Role userRole;
-	
+
+	public User() {
+
+	}
+
+	public Role getUserRole() {
+		return userRole;
+	}
+
 	public void setUserRole(Role userRole) {
 		this.userRole = userRole;
 	}
@@ -54,6 +58,5 @@ public class User {
 	public String toString() {
 		return "User [id=" + id + ", username=" + username + ", password=" + password + ", userRole=" + userRole + "]";
 	}
-
 
 }
