@@ -1,0 +1,27 @@
+package co.simplon.p25.api.service;
+
+import java.util.NoSuchElementException;
+
+import org.springframework.stereotype.Service;
+
+import co.simplon.p25.api.dtos.UserLogin;
+import co.simplon.p25.api.entities.User;
+import co.simplon.p25.api.repositories.UserRepository;
+
+@Service
+public class UserServiceImpl implements UserService {
+
+	private final UserRepository repository;
+
+	public UserServiceImpl(UserRepository repository) {
+		this.repository = repository;
+	}
+
+	@Override
+	public Object signIn(UserLogin inputs) {
+		String username = inputs.getUsername();
+		User user = repository.findByUsernameIgnoreCase(username).orElseThrow(
+				() -> new NoSuchElementException());
+		return user;
+	}
+}

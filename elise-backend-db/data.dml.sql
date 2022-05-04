@@ -6,3 +6,4 @@
  * \q
  */
 INSERT INTO roles (name) values ('ROLE_ADMIN');
+INSERT INTO users (username, password, role_id) VALUES ('email@domain.com', 'Toto123*', '');
