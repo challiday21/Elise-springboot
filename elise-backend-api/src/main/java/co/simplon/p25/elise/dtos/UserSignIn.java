@@ -1,11 +1,11 @@
-package co.simplon.p25.api.dtos;
+package co.simplon.p25.elise.dtos;
 
-public class UserLogin {
+public class UserSignIn {
 
 	private String username;
 	private String password;
 
-	public UserLogin() {
+	public UserSignIn() {
 
 	}
 

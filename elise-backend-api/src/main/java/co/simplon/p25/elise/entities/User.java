@@ -1,4 +1,4 @@
-package co.simplon.p25.api.entities;
+package co.simplon.p25.elise.entities;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -25,9 +25,16 @@ public class User {
 	@ManyToOne
 	@JoinColumn(name = "role_id")
 	private Role userRole;
-
 	public User() {
 
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 	public Role getUserRole() {

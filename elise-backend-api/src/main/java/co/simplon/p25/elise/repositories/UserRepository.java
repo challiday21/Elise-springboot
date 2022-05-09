@@ -1,11 +1,11 @@
-package co.simplon.p25.api.repositories;
+package co.simplon.p25.elise.repositories;
 
 import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import co.simplon.p25.api.entities.User;
+import co.simplon.p25.elise.entities.User;
 
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {

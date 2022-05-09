@@ -1,4 +1,4 @@
-package co.simplon.p25.api.entities;
+package co.simplon.p25.elise.entities;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
