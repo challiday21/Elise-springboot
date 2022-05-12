@@ -20,64 +20,55 @@ import org.springframework.security.oauth2.server.resource.authentication.JwtGra
 
 import com.auth0.jwt.algorithms.Algorithm;
 
-import co.simplon.p25.elise.security.JwtProvider;
-
 @Configuration
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
-    @Value("${elise.security.jwt.issuer}")
-    private String issuer;
-    
-    @Value("${elise.security.jwt.expiration}")
-    private long expiration;
+	@Value("${p25.elise.security.jwt.issuer}")
+	private String issuer;
 
-    @Value("${elise.security.jwt.zoneId}")
-    private String zoneId;
+	@Value("${p25.elise.security.jwt.expiration}")
+	private long expiration;
 
-    @Value("${elise.security.jwt.secret}")
-    private String secret;
+	@Value("${p25.elise.security.jwt.zoneId}")
+	private String zoneId;
 
-    @Override
-    protected void configure(HttpSecurity http) throws Exception {
-	http.cors().and().csrf().disable().logout().disable()
-		.sessionManagement()
-		.sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
-		.authorizeRequests().antMatchers("/users/**").permitAll().and()
-		.authorizeRequests()
-		.antMatchers(HttpMethod.GET, "/members/names",
-			"/members/tasks")
-		.permitAll().and().authorizeRequests().anyRequest()
-		.authenticated().and().oauth2ResourceServer().jwt();
-    }
+	@Value("${p25.elise.security.jwt.secret}")
+	private String secret;
 
-    @Bean
-    public JwtDecoder jwtDecoder() {
-	SecretKey secretKey = new SecretKeySpec(secret.getBytes(),
-		"HMACSHA256");
-	return NimbusJwtDecoder.withSecretKey(secretKey)
-		.macAlgorithm(MacAlgorithm.HS256).build();
-    }
+	@Override
+	protected void configure(HttpSecurity http) throws Exception {
+		http.cors().and().csrf().disable().logout().disable().sessionManagement()
+				.sessionCreationPolicy(SessionCreationPolicy.STATELESS).and().authorizeRequests()
+				.antMatchers("/users/**").permitAll().and().authorizeRequests()
+				.antMatchers(HttpMethod.GET, "/members/names", "/members/tasks").permitAll().and().authorizeRequests()
+				.anyRequest().authenticated().and().oauth2ResourceServer().jwt();
+	}
 
-    @Bean
-    public JwtAuthenticationConverter jwtAuthenticationConverter() {
-	JwtGrantedAuthoritiesConverter authoritiesConverter = new JwtGrantedAuthoritiesConverter();
-	authoritiesConverter.setAuthoritiesClaimName("roles");
-	authoritiesConverter.setAuthorityPrefix("");
-	JwtAuthenticationConverter authenticationConverter = new JwtAuthenticationConverter();
-	authenticationConverter
-		.setJwtGrantedAuthoritiesConverter(authoritiesConverter);
-	return authenticationConverter;
-    }
+	@Bean
+	public JwtDecoder jwtDecoder() {
+		SecretKey secretKey = new SecretKeySpec(secret.getBytes(), "HMACSHA256");
+		return NimbusJwtDecoder.withSecretKey(secretKey).macAlgorithm(MacAlgorithm.HS256).build();
+	}
 
-    @Bean
+	@Bean
+	public JwtAuthenticationConverter jwtAuthenticationConverter() {
+		JwtGrantedAuthoritiesConverter authoritiesConverter = new JwtGrantedAuthoritiesConverter();
+		authoritiesConverter.setAuthoritiesClaimName("roles");
+		authoritiesConverter.setAuthorityPrefix("");
+		JwtAuthenticationConverter authenticationConverter = new JwtAuthenticationConverter();
+		authenticationConverter.setJwtGrantedAuthoritiesConverter(authoritiesConverter);
+		return authenticationConverter;
+	}
+
+	@Bean
 	public PasswordEncoder passwordEncoder() {
 		return new BCryptPasswordEncoder();
 	}
 
-    @Bean
-    public JwtProvider jwtProvider() {
-	Algorithm algorithm = Algorithm.HMAC256(secret);
-	return new JwtProvider(issuer, expiration, zoneId, algorithm);
-    }
+	@Bean
+	public JwtProvider jwtProvider() {
+		Algorithm algorithm = Algorithm.HMAC256(secret);
+		return new JwtProvider(issuer, expiration, zoneId, algorithm);
+	}
 
 }

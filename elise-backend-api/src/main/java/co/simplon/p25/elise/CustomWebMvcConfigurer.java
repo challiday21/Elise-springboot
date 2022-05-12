@@ -7,22 +7,21 @@ import org.springframework.web.servlet.config.annotation.PathMatchConfigurer;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
-public class CustomWebMvcConfigurer implements WebMvcConfigurer{
+public class CustomWebMvcConfigurer implements WebMvcConfigurer {
 
-	@Value("${restcountries.cors.allowed-origins}")
+	@Value("${p25.elise.cors.allowed-origins}")
 	private String[] allowedOrigins;
 
-	@Value("${restcountries.cors.allowed-methods}")
+	@Value("${p25.elise.cors.allowed-methods}")
 	private String[] allowedMethods;
 
-    @Override
-    public void configurePathMatch(PathMatchConfigurer configurer) {
-	configurer.setUseTrailingSlashMatch(false);
-    }
+	@Override
+	public void configurePathMatch(PathMatchConfigurer configurer) {
+		configurer.setUseTrailingSlashMatch(false);
+	}
 
-    @Override
-    public void addCorsMappings(CorsRegistry registry) {
-	registry.addMapping("/**").allowedOrigins(allowedOrigins)
-		.allowedMethods(allowedMethods);
-    }
+	@Override
+	public void addCorsMappings(CorsRegistry registry) {
+		registry.addMapping("/**").allowedOrigins(allowedOrigins).allowedMethods(allowedMethods);
+	}
 }
