@@ -27,11 +27,11 @@ public class Member {
 
 	@ManyToOne
 	@JoinColumn(name = "type_id")
-	private Role memberType;
+	private TypeMember memberType;
 
 	@ManyToOne
 	@JoinColumn(name = "task_id")
-	private Role memberTask;
+	private Task memberTask;
 	
 	public Member() {
 		
@@ -69,19 +69,19 @@ public class Member {
 		this.codeDep = codeDep;
 	}
 
-	public Role getMemberType() {
+	public TypeMember getMemberType() {
 		return memberType;
 	}
 
-	public void setMemberType(Role memberType) {
+	public void setMemberType(TypeMember memberType) {
 		this.memberType = memberType;
 	}
 
-	public Role getMemberTask() {
+	public Task getMemberTask() {
 		return memberTask;
 	}
 
-	public void setMemberTask(Role memberTask) {
+	public void setMemberTask(Task memberTask) {
 		this.memberTask = memberTask;
 	}
 

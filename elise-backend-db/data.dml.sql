@@ -15,7 +15,7 @@
 
 /* créer des tâches à faire */
 INSERT INTO tasks (name) VALUES ('Visite a domicile');
-INSERT INTO tasks (name) VALUES ('Activités en groupe');
+INSERT INTO tasks (name) VALUES ('Activites en groupe');
 INSERT INTO tasks (name) VALUES ('Appels "Zoom"');
 
 /* créer des types des membres */
