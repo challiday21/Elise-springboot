@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import co.simplon.p25.elise.dtos.MemberCreate;
 import co.simplon.p25.elise.entities.Member;
 import co.simplon.p25.elise.service.MemberService;
 
@@ -19,9 +20,9 @@ public class MemberController {
 	}
 	
 	@PostMapping("/create")
-	public Object create(@RequestBody Member member) {
-		System.out.println(member);
-		return member;
+	public void create(@RequestBody MemberCreate inputs) {
+		System.out.println(inputs);
+		service.create(inputs);
 	}
 
 }
