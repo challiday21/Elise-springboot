@@ -5,6 +5,12 @@
  * \i schema.ddl.sql
  * \q
  */
+DROP TABLE IF EXISTS members;
+DROP TABLE IF EXISTS type_member;
+DROP TABLE IF EXISTS tasks;
+DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS roles;
+
 CREATE TABLE roles (
 	id SERIAL PRIMARY KEY,
 	name varchar(20) UNIQUE NOT NULL
