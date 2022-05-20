@@ -40,7 +40,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		http.cors().and().csrf().disable().logout().disable().sessionManagement()
 				.sessionCreationPolicy(SessionCreationPolicy.STATELESS).and().authorizeRequests()
 				.antMatchers("/users/**").permitAll().and().authorizeRequests()
-				.antMatchers(HttpMethod.GET, "/members/names", "/members/tasks").permitAll().and().authorizeRequests()
+				.antMatchers(HttpMethod.POST, "/members/create").hasRole("ADMIN").and().authorizeRequests()
 				.anyRequest().authenticated().and().oauth2ResourceServer().jwt();
 	}
 
