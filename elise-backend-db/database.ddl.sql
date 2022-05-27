@@ -5,4 +5,5 @@
  * \i database.ddl.sql
  * \q
  */
+DROP DATABASE IF EXISTS elise;
 CREATE DATABASE elise;

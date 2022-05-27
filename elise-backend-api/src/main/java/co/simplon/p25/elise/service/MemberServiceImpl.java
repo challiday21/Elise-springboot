@@ -1,5 +1,7 @@
 package co.simplon.p25.elise.service;
 
+// import java.util.List;
+
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -26,4 +28,8 @@ public class MemberServiceImpl implements MemberService {
 		repository.save(member);
 	}
 
+	/*
+	 * @Override public List<Member> findNames() { return
+	 * repository.findAll(Member.class); }
+	 */
 }

@@ -10,9 +10,9 @@
 INSERT INTO roles (name) values ('ROLE_ADMIN');
 
 /* créer des utilisateurs tests */
-INSERT INTO users (username, password) VALUES ('email@domain.com', '$2a$10$jtjVcOpwmLp4Zqn2vHYLUeTSqnXxrvU3FIzuFI2nt62U1FAAbhq3S');
-INSERT INTO users (username, password, role_id) VALUES ('clairehalliday73@gmail.com', '$2a$10$jtjVcOpwmLp4Zqn2vHYLUeTSqnXxrvU3FIzuFI2nt62U1FAAbhq3S', (SELECT r.id FROM roles r WHERE r.name = 'ROLE_ADMIN'));
-INSERT INTO users (username, password, role_id) VALUES ('clairehalliday@gmail.com', '$2a$10$jtjVcOpwmLp4Zqn2vHYLUeTSqnXxrvU3FIzuFI2nt62U1FAAbhq3S', (SELECT r.id FROM roles r WHERE r.name = 'ROLE_ADMIN'));
+INSERT INTO users (username, password) VALUES ('email@domain.com', '$2a$12$JlHeu4p9.kyXbBE93wXjy.arqsdfXyk93UT/1xwTHxJwqlUKflBha');
+INSERT INTO users (username, password, role_id) VALUES ('clairehalliday73@gmail.com', '$2a$12$JlHeu4p9.kyXbBE93wXjy.arqsdfXyk93UT/1xwTHxJwqlUKflBha', (SELECT r.id FROM roles r WHERE r.name = 'ROLE_ADMIN'));
+INSERT INTO users (username, password, role_id) VALUES ('clairehalliday@gmail.com', '$2a$12$JlHeu4p9.kyXbBE93wXjy.arqsdfXyk93UT/1xwTHxJwqlUKflBha', (SELECT r.id FROM roles r WHERE r.name = 'ROLE_ADMIN'));
 
 /* créer des tâches à faire */
 INSERT INTO tasks (name) VALUES ('Visite a domicile');
