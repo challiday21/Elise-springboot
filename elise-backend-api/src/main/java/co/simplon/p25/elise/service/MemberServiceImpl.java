@@ -1,11 +1,14 @@
 package co.simplon.p25.elise.service;
 
+import java.util.List;
+
 // import java.util.List;
 
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import co.simplon.p25.elise.dtos.MemberCreate;
+import co.simplon.p25.elise.dtos.MemberList;
 import co.simplon.p25.elise.entities.Member;
 import co.simplon.p25.elise.repositories.MemberRepository;
 
@@ -27,6 +30,17 @@ public class MemberServiceImpl implements MemberService {
 		member.setCodeDep(inputs.getCodeDep());
 		repository.save(member);
 	}
+
+	@Override
+	public List<Member> getNames() {
+		return repository.findAll();
+	}
+
+	@Override
+	public Member getById(Long id) {
+		return repository.findById(id).get();
+	}
+	
 
 	/*
 	 * @Override public List<Member> findNames() { return
