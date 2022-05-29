@@ -40,10 +40,5 @@ public class MemberController {
     public Member getById(@PathVariable("id") Long id) {
     	return service.getById(id);
     }
-	
-	/*
-	 * @GetMapping("/names") public List<Member> names() { return
-	 * service.findNames(); }
-	 */	
 
 }
