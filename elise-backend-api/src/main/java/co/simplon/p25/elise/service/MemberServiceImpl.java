@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import co.simplon.p25.elise.dtos.MemberCreate;
-import co.simplon.p25.elise.dtos.MemberList;
+import co.simplon.p25.elise.dtos.MemberUpdate;
 import co.simplon.p25.elise.entities.Member;
 import co.simplon.p25.elise.repositories.MemberRepository;
 
@@ -16,11 +16,11 @@ import co.simplon.p25.elise.repositories.MemberRepository;
 public class MemberServiceImpl implements MemberService {
 
 	private final MemberRepository repository;
-	
+
 	public MemberServiceImpl(MemberRepository repository) {
-		this.repository = repository;		
+		this.repository = repository;
 	}
-	
+
 	@Transactional
 	@Override
 	public void create(MemberCreate inputs) {
@@ -40,10 +40,20 @@ public class MemberServiceImpl implements MemberService {
 	public Member getById(Long id) {
 		return repository.findById(id).get();
 	}
-	
 
-	/*
-	 * @Override public List<Member> findNames() { return
-	 * repository.findAll(Member.class); }
-	 */
+	@Override
+	public void delete(long id) {
+		repository.deleteById(id);
+	}
+
+	@Override
+	public void update(MemberUpdate inputs) {
+		Member member = new Member();
+		member.setFirstName(inputs.getFirstName());
+		member.setSurname(inputs.getSurname());
+		member.setCodeDep(inputs.getCodeDep());
+		repository.save(member);
+
+	}
+
 }

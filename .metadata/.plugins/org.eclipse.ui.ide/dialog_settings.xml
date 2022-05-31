@@ -6,6 +6,8 @@
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="C:\Users\Utilisateur\challiday\Titre_professionnel\Code\Elise-springboot\elise-backend-db"/>
+			<item value="C:\Users\Utilisateur\challiday\Titre_professionnel\Code\Elise-springboot"/>
 			<item value="C:\Users\Utilisateur\challiday\ProjetGroupe\teams"/>
 			<item value="C:\Users\Utilisateur\challiday\ProjetGroupe\latest-latest-clone\restcountries-backend"/>
 			<item value="C:\Users\Utilisateur\challiday\ProjetGroupe\latest-latest-clone"/>
