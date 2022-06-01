@@ -33,9 +33,9 @@ public class MemberController {
 	}
 
 	@PutMapping("/update")
-	public void update(@RequestBody MemberUpdate inputs) {
+	public void update(Long id, @RequestBody MemberUpdate inputs) {
 		System.out.println(inputs);
-		service.update(inputs);
+		service.update(id, inputs);
 	}
 
 	@GetMapping("/names")

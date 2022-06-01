@@ -42,18 +42,17 @@ public class MemberServiceImpl implements MemberService {
 	}
 
 	@Override
-	public void delete(long id) {
+	public void delete(Long id) {
 		repository.deleteById(id);
 	}
 
 	@Override
-	public void update(MemberUpdate inputs) {
-		Member member = new Member();
+	public void update(Long id, MemberUpdate inputs) {
+		Member member = repository.findById(id).get();
 		member.setFirstName(inputs.getFirstName());
 		member.setSurname(inputs.getSurname());
 		member.setCodeDep(inputs.getCodeDep());
 		repository.save(member);
-
 	}
 
 }

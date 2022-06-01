@@ -14,7 +14,7 @@ public interface MemberService {
 
 	Member getById(Long id);
 
-	void update(MemberUpdate inputs);
+	void update(Long id, MemberUpdate inputs);
 
-	void delete(long id);
+	void delete(Long id);
 }

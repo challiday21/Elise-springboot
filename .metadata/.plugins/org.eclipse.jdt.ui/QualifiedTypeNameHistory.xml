@@ -7,4 +7,6 @@
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.ResponseStatus"/>
     <fullyQualifiedTypeName name="java.util.Optional"/>
     <fullyQualifiedTypeName name="co.simplon.p25.api.entities.User"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PatchMapping"/>
+    <fullyQualifiedTypeName name="co.simplon.p25.elise.dtos.MemberUpdate"/>
 </qualifiedTypeNameHistroy>
