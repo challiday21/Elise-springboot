@@ -3624,3 +3624,15 @@ java.util.concurrent.TimeoutException
 
 !ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-06-03 12:12:14.951
 !MESSAGE executing callback sts4.classpath.igvCaHAy SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-06-03 12:46:25.499
+!MESSAGE exists = false open = true => deleted = true
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-06-03 12:46:25.499
+!MESSAGE buffering callback sts4.classpath.igvCaHAy crud-api true 0
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-06-03 12:46:25.499
+!MESSAGE executing callback sts4.classpath.igvCaHAy 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-06-03 12:46:25.609
+!MESSAGE executing callback sts4.classpath.igvCaHAy SUCCESS [done]
