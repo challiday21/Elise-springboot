@@ -10,15 +10,25 @@ import org.springframework.transaction.annotation.Transactional;
 import co.simplon.p25.elise.dtos.MemberCreate;
 import co.simplon.p25.elise.dtos.MemberUpdate;
 import co.simplon.p25.elise.entities.Member;
+import co.simplon.p25.elise.entities.MemberType;
+import co.simplon.p25.elise.entities.Task;
 import co.simplon.p25.elise.repositories.MemberRepository;
+import co.simplon.p25.elise.repositories.TaskRepository;
+import co.simplon.p25.elise.repositories.TypeRepository;
 
 @Service
 public class MemberServiceImpl implements MemberService {
 
-	private final MemberRepository repository;
+	private final MemberRepository members;
 
-	public MemberServiceImpl(MemberRepository repository) {
-		this.repository = repository;
+	private final TypeRepository types;
+	private final TaskRepository tasks;
+
+	public MemberServiceImpl(MemberRepository members, TypeRepository types, TaskRepository tasks) {
+
+		this.members = members;
+		this.types = types;
+		this.tasks = tasks;
 	}
 
 	@Transactional
@@ -28,31 +38,37 @@ public class MemberServiceImpl implements MemberService {
 		member.setFirstName(inputs.getFirstName());
 		member.setSurname(inputs.getSurname());
 		member.setCodeDep(inputs.getCodeDep());
-		repository.save(member);
+		MemberType type = types.getById(inputs.getMemberType());
+		member.setType(type);
+		Task task = tasks.getById(inputs.getMemberTask());
+		member.setTask(task);
+		members.save(member);
 	}
 
 	@Override
 	public List<Member> getNames() {
-		return repository.findAll();
+		return members.findAll();
 	}
 
 	@Override
 	public Member getById(Long id) {
-		return repository.findById(id).get();
+		return members.findById(id).get();
 	}
 
 	@Override
 	public void delete(Long id) {
-		repository.deleteById(id);
+		members.deleteById(id);
 	}
 
+	@Transactional
 	@Override
 	public void update(Long id, MemberUpdate inputs) {
-		Member member = repository.findById(id).get();
+		Member member = members.findById(id).get();
+		//
 		member.setFirstName(inputs.getFirstName());
 		member.setSurname(inputs.getSurname());
 		member.setCodeDep(inputs.getCodeDep());
-		repository.save(member);
+		members.save(member);
 	}
 
 }

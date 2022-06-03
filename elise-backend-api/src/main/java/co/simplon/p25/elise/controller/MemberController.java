@@ -32,9 +32,13 @@ public class MemberController {
 		service.create(inputs);
 	}
 
-    @PutMapping("/{id}")
-    public void update(@PathVariable("id") Long id,
-    	    @RequestBody MemberUpdate inputs) {
+	@GetMapping("/{id}")
+	public Member getById(@PathVariable("id") Long id) {
+		return service.getById(id);
+	}
+
+	@PutMapping("/{id}")
+	public void update(@PathVariable("id") Long id, @RequestBody MemberUpdate inputs) {
 		System.out.println(inputs);
 		service.update(id, inputs);
 	}
@@ -44,11 +48,6 @@ public class MemberController {
 		return service.getNames();
 	}
 
-	@GetMapping("/{id}")
-	public Member getById(@PathVariable("id") Long id) {
-		return service.getById(id);
-	}
-		
 	@DeleteMapping("/{id}")
 	public void delete(@PathVariable("id") Long id) {
 		service.delete(id);

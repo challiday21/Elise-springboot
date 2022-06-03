@@ -6,7 +6,7 @@
  * \q
  */
 DROP TABLE IF EXISTS members;
-DROP TABLE IF EXISTS type_member;
+DROP TABLE IF EXISTS member_types;
 DROP TABLE IF EXISTS tasks;
 DROP TABLE IF EXISTS users;
 DROP TABLE IF EXISTS roles;
@@ -31,7 +31,7 @@ CREATE TABLE tasks (
 	name varchar(255) UNIQUE NOT NULL
 );
 
-CREATE TABLE type_member (
+CREATE TABLE member_types (
 	id SERIAL PRIMARY KEY,   
 	name varchar(50) UNIQUE NOT NULL
 );
@@ -41,11 +41,11 @@ CREATE TABLE members (
 	firstname varchar(255) NOT NULL,
 	surname varchar(255) NOT NULL,
 	code_dep varchar(20) NOT NULL,
-	type_id INTEGER,	
+	member_type_id INTEGER,	
 	task_id INTEGER, 
-	CONSTRAINT fk_type_id
-    	FOREIGN KEY (type_id)
-    	REFERENCES type_member(id),
+	CONSTRAINT fk_member_type_id
+    	FOREIGN KEY (member_type_id)
+    	REFERENCES member_types(id),
 	CONSTRAINT fk_task_id
     	FOREIGN KEY (task_id)
     	REFERENCES tasks(id)

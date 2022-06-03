@@ -2,15 +2,14 @@ package co.simplon.p25.elise.dtos;
 
 public class MemberUpdate {
 
-	private int id;
+	// private Long id;
 	private String firstName;
 	private String surname;
 	private String codeDep;
 
-	public int getId() {
-		return id;
-	}
-
+	/*
+	 * public Long getId() { return id; }
+	 */
 	public String getFirstName() {
 		return firstName;
 	}

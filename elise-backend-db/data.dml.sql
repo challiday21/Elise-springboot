@@ -20,8 +20,8 @@ INSERT INTO tasks (name) VALUES ('Activites en groupe');
 INSERT INTO tasks (name) VALUES ('Appels "Zoom"');
 
 /* créer des types des membres */
-INSERT INTO type_member (name) VALUES ('Senior');
-INSERT INTO type_member (name) VALUES ('Benevole');
+INSERT INTO member_types (name) VALUES ('Senior');
+INSERT INTO member_types (name) VALUES ('Benevole');
 
 /* créer des types des membres */
-INSERT INTO members (firstname, surname, code_dep, type_id, task_id) VALUES ('Elise','BLANCHE','75','2','1');
+INSERT INTO members (firstname, surname, code_dep, member_type_id, task_id) VALUES ('Elise','BLANCHE','75','2','1');

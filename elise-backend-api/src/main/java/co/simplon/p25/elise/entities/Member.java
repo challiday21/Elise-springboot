@@ -26,15 +26,15 @@ public class Member {
 	private String codeDep;
 
 	@ManyToOne
-	@JoinColumn(name = "type_id")
-	private TypeMember memberType;
+	@JoinColumn(name = "member_type_id")
+	private MemberType type;
 
 	@ManyToOne
 	@JoinColumn(name = "task_id")
-	private Task memberTask;
-	
+	private Task task;
+
 	public Member() {
-		
+
 	}
 
 	public Long getId() {
@@ -69,20 +69,20 @@ public class Member {
 		this.codeDep = codeDep;
 	}
 
-	public TypeMember getMemberType() {
-		return memberType;
+	public MemberType getType() {
+		return type;
 	}
 
-	public void setMemberType(TypeMember memberType) {
-		this.memberType = memberType;
+	public void setType(MemberType type) {
+		this.type = type;
 	}
 
-	public Task getMemberTask() {
-		return memberTask;
+	public Task getTask() {
+		return task;
 	}
 
-	public void setMemberTask(Task memberTask) {
-		this.memberTask = memberTask;
+	public void setTask(Task task) {
+		this.task = task;
 	}
 
 }
