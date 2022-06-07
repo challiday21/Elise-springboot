@@ -14,17 +14,17 @@ import co.simplon.p25.elise.entities.MemberType;
 import co.simplon.p25.elise.entities.Task;
 import co.simplon.p25.elise.repositories.MemberRepository;
 import co.simplon.p25.elise.repositories.TaskRepository;
-import co.simplon.p25.elise.repositories.TypeRepository;
+import co.simplon.p25.elise.repositories.MemberTypeRepository;
 
 @Service
 public class MemberServiceImpl implements MemberService {
 
 	private final MemberRepository members;
 
-	private final TypeRepository types;
+	private final MemberTypeRepository types;
 	private final TaskRepository tasks;
 
-	public MemberServiceImpl(MemberRepository members, TypeRepository types, TaskRepository tasks) {
+	public MemberServiceImpl(MemberRepository members, MemberTypeRepository types, TaskRepository tasks) {
 
 		this.members = members;
 		this.types = types;

@@ -9,4 +9,11 @@
     <fullyQualifiedTypeName name="co.simplon.p25.api.entities.User"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PatchMapping"/>
     <fullyQualifiedTypeName name="co.simplon.p25.elise.dtos.MemberUpdate"/>
+    <fullyQualifiedTypeName name="co.simplon.p25.elise.repositories.TypeRepository"/>
+    <fullyQualifiedTypeName name="co.simplon.p25.elise.repositories.TaskRepository"/>
+    <fullyQualifiedTypeName name="co.simplon.p25.elise.entities.TypeMember"/>
+    <fullyQualifiedTypeName name="org.springframework.stereotype.Repository"/>
+    <fullyQualifiedTypeName name="co.simplon.p25.elise.entities.Task"/>
+    <fullyQualifiedTypeName name="co.simplon.p25.elise.dtos.MemberList"/>
+    <fullyQualifiedTypeName name="co.simplon.p25.elise.entities.Member"/>
 </qualifiedTypeNameHistroy>
