@@ -19,7 +19,7 @@ CREATE TABLE roles (
 CREATE TABLE users (
 	id SERIAL PRIMARY KEY,
 	username varchar(255) UNIQUE NOT NULL,
-	password varchar(60) NOT NULL,
+	password varchar(255) NOT NULL,
 	role_id INTEGER, -- on ne met pas "NOT NUll" car on peut detenir zero role.
 	CONSTRAINT fk_role_id
     	FOREIGN KEY (role_id)

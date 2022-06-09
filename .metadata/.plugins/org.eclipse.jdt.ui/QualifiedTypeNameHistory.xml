@@ -13,7 +13,10 @@
     <fullyQualifiedTypeName name="co.simplon.p25.elise.repositories.TaskRepository"/>
     <fullyQualifiedTypeName name="co.simplon.p25.elise.entities.TypeMember"/>
     <fullyQualifiedTypeName name="org.springframework.stereotype.Repository"/>
-    <fullyQualifiedTypeName name="co.simplon.p25.elise.entities.Task"/>
     <fullyQualifiedTypeName name="co.simplon.p25.elise.dtos.MemberList"/>
     <fullyQualifiedTypeName name="co.simplon.p25.elise.entities.Member"/>
+    <fullyQualifiedTypeName name="co.simplon.p25.elise.entities.MemberType"/>
+    <fullyQualifiedTypeName name="co.simplon.p25.elise.service.MemberTypeService"/>
+    <fullyQualifiedTypeName name="org.springframework.stereotype.Service"/>
+    <fullyQualifiedTypeName name="co.simplon.p25.elise.entities.Task"/>
 </qualifiedTypeNameHistroy>

@@ -10,7 +10,7 @@
 INSERT INTO roles (name) values ('ROLE_ADMIN');
 
 /* créer des utilisateurs tests */
-INSERT INTO users (username, password, role_id) VALUES ('clairehalliday@gmail.com', '$2a$12$JlHeu4p9.kyXbBE93wXjy.arqsdfXyk93UT/1xwTHxJwqlUKflBha', (SELECT r.id FROM roles r WHERE r.name = 'ROLE_ADMIN'));
+INSERT INTO users (username, password, role_id) VALUES ('clairehalliday@gmail.com', '$2a$12$e9uXaGxdqJvoymb3UyiWK.qbDbRms02bAPWb2C4EXh7mMHI87EvyS', (SELECT r.id FROM roles r WHERE r.name = 'ROLE_ADMIN'));
 INSERT INTO users (username, password) VALUES ('email@domain.com', '$2a$12$BAZcFtS4HmPwZ7Im4agfFeKfOQQhmwjY2JkQkPcZ3YuQPkHC0KuGC');
 INSERT INTO users (username, password, role_id) VALUES ('clairehalliday73@gmail.com', '$2a$12$0ph.AL462NV3n4kDx8IZ8uuLaAjI7iMl4CD1POLemhj.neF1ebpvW', (SELECT r.id FROM roles r WHERE r.name = 'ROLE_ADMIN'));
 
