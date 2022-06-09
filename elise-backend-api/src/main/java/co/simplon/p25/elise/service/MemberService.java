@@ -3,6 +3,7 @@ package co.simplon.p25.elise.service;
 import java.util.List;
 
 import co.simplon.p25.elise.dtos.MemberCreate;
+import co.simplon.p25.elise.dtos.MemberList;
 import co.simplon.p25.elise.dtos.MemberUpdate;
 import co.simplon.p25.elise.entities.Member;
 

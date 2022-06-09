@@ -41,6 +41,7 @@ CREATE TABLE members (
 	firstname varchar(255) NOT NULL,
 	surname varchar(255) NOT NULL,
 	code_dep varchar(20) NOT NULL,
+	member_num varchar(20) NOT NULL,
 	member_type_id INTEGER,	
 	task_id INTEGER, 
 	CONSTRAINT fk_member_type_id

@@ -18,7 +18,7 @@ public class MemberType {
 	private String name;
 
 	public MemberType() {
-		// TODO Auto-generated constructor stub
+
 	}
 
 	public Long getId() {

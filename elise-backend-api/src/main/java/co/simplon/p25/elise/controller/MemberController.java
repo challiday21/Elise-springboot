@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import co.simplon.p25.elise.dtos.MemberCreate;
+import co.simplon.p25.elise.dtos.MemberList;
 import co.simplon.p25.elise.dtos.MemberUpdate;
 import co.simplon.p25.elise.entities.Member;
 import co.simplon.p25.elise.service.MemberService;
@@ -32,6 +33,11 @@ public class MemberController {
 		service.create(inputs);
 	}
 
+	@GetMapping("/names")
+	public List<Member> getNames() {
+		return service.getNames();
+	}
+
 	@GetMapping("/{id}")
 	public Member getById(@PathVariable("id") Long id) {
 		return service.getById(id);
@@ -41,11 +47,6 @@ public class MemberController {
 	public void update(@PathVariable("id") Long id, @RequestBody MemberUpdate inputs) {
 		System.out.println(inputs);
 		service.update(id, inputs);
-	}
-
-	@GetMapping("/names")
-	public List<Member> getNames() {
-		return service.getNames();
 	}
 
 	@DeleteMapping("/{id}")
