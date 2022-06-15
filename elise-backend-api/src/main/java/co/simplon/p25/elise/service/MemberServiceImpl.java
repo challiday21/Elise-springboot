@@ -13,8 +13,8 @@ import co.simplon.p25.elise.entities.Member;
 import co.simplon.p25.elise.entities.MemberType;
 import co.simplon.p25.elise.entities.Task;
 import co.simplon.p25.elise.repositories.MemberRepository;
-import co.simplon.p25.elise.repositories.TaskRepository;
 import co.simplon.p25.elise.repositories.MemberTypeRepository;
+import co.simplon.p25.elise.repositories.TaskRepository;
 
 @Service
 public class MemberServiceImpl implements MemberService {
@@ -68,6 +68,10 @@ public class MemberServiceImpl implements MemberService {
 		member.setFirstName(inputs.getFirstName());
 		member.setSurname(inputs.getSurname());
 		member.setCodeDep(inputs.getCodeDep());
+		MemberType type = types.getById(inputs.getMemberType());
+		member.setType(type);
+		Task task = tasks.getById(inputs.getMemberTask());
+		member.setTask(task);
 		members.save(member);
 	}
 

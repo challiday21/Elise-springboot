@@ -6,6 +6,8 @@ public class MemberUpdate {
 	private String firstName;
 	private String surname;
 	private String codeDep;
+	private Long memberType;
+	private Long memberTask;
 
 	/*
 	 * public Long getId() { return id; }
@@ -32,5 +34,21 @@ public class MemberUpdate {
 
 	public void setCodeDep(String codeDep) {
 		this.codeDep = codeDep;
+	}
+
+	public Long getMemberType() {
+		return memberType;
+	}
+
+	public void setMemberType(Long memberType) {
+		this.memberType = memberType;
+	}
+
+	public Long getMemberTask() {
+		return memberTask;
+	}
+
+	public void setMemberTask(Long memberTask) {
+		this.memberTask = memberTask;
 	}
 }
