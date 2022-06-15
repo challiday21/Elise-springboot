@@ -62,8 +62,8 @@ public class MemberServiceImpl implements MemberService {
 
 	@Transactional
 	@Override
-	public void update(Long id, MemberUpdate inputs) {
-		Member member = members.findById(id).get();
+	public void update(MemberUpdate inputs) {
+		Member member = members.findById(inputs.getId()).get();
 		//
 		member.setFirstName(inputs.getFirstName());
 		member.setSurname(inputs.getSurname());
