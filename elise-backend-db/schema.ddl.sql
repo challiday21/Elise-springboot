@@ -12,7 +12,7 @@ DROP TABLE IF EXISTS users;
 DROP TABLE IF EXISTS roles;
 
 CREATE TABLE roles (
-	id SERIAL PRIMARY KEY,
+	id SERIAL PRIMARY KEY,	
 	name varchar(20) UNIQUE NOT NULL
 );
 
@@ -20,7 +20,7 @@ CREATE TABLE users (
 	id SERIAL PRIMARY KEY,
 	username varchar(255) UNIQUE NOT NULL,
 	password varchar(255) NOT NULL,
-	role_id INTEGER, -- on ne met pas "NOT NUll" car on peut detenir zero role.
+	role_id INTEGER, 
 	CONSTRAINT fk_role_id
     	FOREIGN KEY (role_id)
     	REFERENCES roles(id)
@@ -34,14 +34,13 @@ CREATE TABLE tasks (
 CREATE TABLE member_types (
 	id SERIAL PRIMARY KEY,   
 	name varchar(50) UNIQUE NOT NULL
-);
+); 
 
 CREATE TABLE members (
 	id SERIAL PRIMARY KEY,
 	firstname varchar(255) NOT NULL,
 	surname varchar(255) NOT NULL,
 	code_dep varchar(20) NOT NULL,
-	member_num varchar(20) NOT NULL,
 	member_type_id INTEGER,	
 	task_id INTEGER, 
 	CONSTRAINT fk_member_type_id

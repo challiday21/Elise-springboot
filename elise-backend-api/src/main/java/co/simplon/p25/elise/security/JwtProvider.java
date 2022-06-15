@@ -14,9 +14,7 @@ public class JwtProvider {
 	
 	private final String issuer;
     private final long expiration;
-
     private final ZoneId zoneId;
-
     private final Algorithm algorithm;
 
     JwtProvider(String issuer, long expiration, String zoneId,
@@ -28,17 +26,17 @@ public class JwtProvider {
     }
 
     public Jwt create(String subject, List<String> roles) {
-	LocalDateTime now = LocalDateTime.now(zoneId);
-	Date issuedAt = toJavaUtilDate(now);
-	LocalDateTime expires = now.plusSeconds(expiration);
-	Date expiresAt = toJavaUtilDate(expires);
-	Builder builder = JWT.create().withIssuer(issuer).withIssuedAt(issuedAt)
-		.withExpiresAt(expiresAt).withSubject(subject);
-	if (roles != null && !roles.isEmpty()) {
-	    builder.withClaim("roles", roles);
-	}
-	String token = builder.sign(algorithm);
-	return new Jwt(token);
+    	LocalDateTime now = LocalDateTime.now(zoneId);
+    	Date issuedAt = toJavaUtilDate(now);
+    	LocalDateTime expires = now.plusSeconds(expiration);
+    	Date expiresAt = toJavaUtilDate(expires);
+    	Builder builder = JWT.create().withIssuer(issuer).withIssuedAt(issuedAt)
+    			.withExpiresAt(expiresAt).withSubject(subject);
+    	if (roles != null && !roles.isEmpty()) {
+    		builder.withClaim("roles", roles);
+    	}
+    	String token = builder.sign(algorithm);
+    	return new Jwt(token);
     }
 
     private Date toJavaUtilDate(LocalDateTime now) {
