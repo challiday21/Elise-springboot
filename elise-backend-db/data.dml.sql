@@ -26,12 +26,12 @@ INSERT INTO member_types (name) VALUES ('Benevole');
 
 /* créer des membres */
 INSERT INTO members (firstname, surname, code_dep, member_type_id, task_id) VALUES ('Elise','BLANCHE','75','2','1');
-INSERT INTO members (firstname, surname, code_dep, member_type_id, task_id) VALUES ('Jean','ROUGE','93','2','1');
-INSERT INTO members (firstname, surname, code_dep, member_type_id, task_id) VALUES ('Marie','JAUNE','92','2','1');
+INSERT INTO members (firstname, surname, code_dep, member_type_id, task_id) VALUES ('Jean','ROUGE','93','2','2');
+INSERT INTO members (firstname, surname, code_dep, member_type_id, task_id) VALUES ('Marie','JAUNE','92','2','3');
 INSERT INTO members (firstname, surname, code_dep, member_type_id, task_id) VALUES ('Alice','VERTE','75','1','1');
-INSERT INTO members (firstname, surname, code_dep, member_type_id, task_id) VALUES ('Pierre','BLEU','92','1','1');
-INSERT INTO members (firstname, surname, code_dep, member_type_id, task_id) VALUES ('Michel','LILAC','92','2','1');
+INSERT INTO members (firstname, surname, code_dep, member_type_id, task_id) VALUES ('Pierre','BLEU','92','1','2');
+INSERT INTO members (firstname, surname, code_dep, member_type_id, task_id) VALUES ('Michel','LILAC','92','2','3');
 INSERT INTO members (firstname, surname, code_dep, member_type_id, task_id) VALUES ('Greta','ROSE','75','2','1');
-INSERT INTO members (firstname, surname, code_dep, member_type_id, task_id) VALUES ('Isabelle','VIOLET','93','1','1');
-INSERT INTO members (firstname, surname, code_dep, member_type_id, task_id) VALUES ('Robert','BLEU-VERT','75','2','1');
+INSERT INTO members (firstname, surname, code_dep, member_type_id, task_id) VALUES ('Isabelle','VIOLET','93','1','2');
+INSERT INTO members (firstname, surname, code_dep, member_type_id, task_id) VALUES ('Robert','BLEU-VERT','75','2','3');
 INSERT INTO members (firstname, surname, code_dep, member_type_id, task_id) VALUES ('Steven','NOIR','93','2','1');

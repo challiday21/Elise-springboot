@@ -48,12 +48,6 @@ public class MemberController {
 		service.update(inputs);
 	}
 
-//	@PutMapping("/{id}")
-//	public void update(@PathVariable("id") Long id, @RequestBody MemberUpdate inputs) {
-//		System.out.println(inputs);
-//		service.update(id, inputs);
-//	}
-
 	@DeleteMapping("/{id}")
 	public void delete(@PathVariable("id") Long id) {
 		service.delete(id);

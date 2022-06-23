@@ -18,19 +18,15 @@ import co.simplon.p25.elise.repositories.TaskRepository;
 
 @Service
 public class MemberServiceImpl implements MemberService {
-
 	private final MemberRepository members;
-
 	private final MemberTypeRepository types;
 	private final TaskRepository tasks;
 
 	public MemberServiceImpl(MemberRepository members, MemberTypeRepository types, TaskRepository tasks) {
-
 		this.members = members;
 		this.types = types;
 		this.tasks = tasks;
 	}
-
 	@Transactional
 	@Override
 	public void create(MemberCreate inputs) {
